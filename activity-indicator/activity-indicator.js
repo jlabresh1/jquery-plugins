@@ -147,7 +147,8 @@
 						rule += p1 + value + p2 + value; 
 					}
 					rule += '100% { -webkit-transform:rotate(100deg); }\n}';
-					document.styleSheets[0].insertRule(rule);
+					//document.styleSheets[0].insertRule(rule);
+					$('<style></style>').appendTo('head').attr('type','text/css').text(rule);
 					animations[steps] = name;
 				}
 				el.css('-webkit-animation', animations[steps] + ' ' + duration +'s linear infinite');
